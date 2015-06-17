@@ -1,0 +1,20 @@
+{
+    "name": "jason-xt/umeng-laravel",
+    "description": "",
+    "authors": [
+        {
+            "name": "JasonXt",
+            "email": "649223152@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "JasonXt\\UmengLaravel": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
