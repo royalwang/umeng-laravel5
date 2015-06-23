@@ -31,13 +31,11 @@ class UmengLaravelServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bindShared('umeng', function ($app) {
-            return '1';
-//            return new Pusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
+        $this->app->bindShared('umeng.ios', function ($app) {
+            return new Pusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
         });
         $this->app->bindShared('umeng.android', function ($app) {
-            return '2';
-//            return new Pusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
+            return new Pusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
         });
     }
 
