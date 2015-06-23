@@ -10,12 +10,11 @@ namespace JasonXt\UmengLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade as LaravelFacades;
 
-class Facade extends LaravelFacades
+class IOS extends LaravelFacades
 {
     protected static function getFacadeAccessor()
     {
-        return 'umeng.pusher';
+        return 'umeng.ios';
     }
-
 
 }

@@ -5,12 +5,13 @@ use Illuminate\Support\ServiceProvider;
 class UmengLaravelServiceProvider extends ServiceProvider
 {
 
+
     /**
      * Indicates if loading of the provider is deferred.
      *
      * @var bool
      */
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Bootstrap the application events.
@@ -30,8 +31,13 @@ class UmengLaravelServiceProvider extends ServiceProvider
     public function register()
     {
         //
-        $this->app->bindShared('umeng.pusher', function ($app) {
-            return new Pusher($app['config']['umeng-laravel::appKey'], $app['config']['umeng-laravel::appSecret']);
+        $this->app->bindShared('umeng', function ($app) {
+            return '1';
+//            return new Pusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
+        });
+        $this->app->bindShared('umeng.android', function ($app) {
+            return '2';
+//            return new Pusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
         });
     }
 
@@ -42,7 +48,7 @@ class UmengLaravelServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('umeng.pusher');
+        return array('umeng.ios','umeng.android');
     }
 
 }
