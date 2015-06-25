@@ -1,6 +1,8 @@
 <?php namespace JasonXt\UmengLaravel;
 
 use Illuminate\Support\ServiceProvider;
+use JasonXt\UmengLaravel\Android\AndroidPusher;
+use JasonXt\UmengLaravel\IOS\IOSPusher;
 
 class UmengLaravelServiceProvider extends ServiceProvider
 {
@@ -32,10 +34,10 @@ class UmengLaravelServiceProvider extends ServiceProvider
     {
         //
         $this->app->bindShared('umeng.ios', function ($app) {
-            return new Pusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
+            return new IOSPusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
         });
         $this->app->bindShared('umeng.android', function ($app) {
-            return new Pusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
+            return new AndroidPusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
         });
     }
 
