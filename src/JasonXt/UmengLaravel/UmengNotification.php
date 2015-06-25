@@ -92,7 +92,7 @@ abstract class UmengNotification
         curl_setopt($ch, CURLOPT_TIMEOUT, 60);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postBody);
         $result = curl_exec($ch);
-        $result =json_decode($result);
+        $result =json_decode($result,true);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 //        $curlErrNo = curl_errno($ch);
         $curlErr = curl_error($ch);
