@@ -22,9 +22,19 @@ aliases:
  
 4.示例
 
-    $apns = ['alert' => ['title'=>'biaoti','body'=>'fujingdexuanjianghu'], 'badge' => 1, 'sound' => 'bingbong.aiff'];
+    $apns = [
+        'alert' => ['title'=>'biaoti','body'=>'fujingdexuanjianghu'], 
+        'badge' => 1, 
+        'sound' => 'bingbong.aiff'
+        ];
     return IOS::customizedcast('S100000567',$apns);
-    $body = ['ticker'=>'收到请告诉我','title'=>'通知标题','text'=>'通知文字描述','after_open'=>'go_app'];
+    
+    $body = [
+        'ticker'=>'收到请告诉我',
+        'title'=>'通知标题',
+        'text'=>'通知文字描述',
+        'after_open'=>'go_app'
+        ];
     return Android::customizedcast('S100000597', $body);
  
  
