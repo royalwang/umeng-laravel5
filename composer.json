@@ -1,20 +1,21 @@
 {
-    "name": "jason-xt/umeng-laravel",
+    "name": "xieyi64/umeng-laravel5",
     "description": "",
+    "keywords": ["apns","gcm","push","notification", "laravel","laravel5","umeng"],
     "authors": [
         {
-            "name": "JasonXt",
-            "email": "649223152@qq.com"
+            "name": "xieyi64",
+            "email": "xieyi64@gmail.com"
         }
     ],
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*"
+        "illuminate/support": "~5"
     },
     "autoload": {
         "psr-0": {
-            "JasonXt\\UmengLaravel": "src/"
+            "xieyi64\\UmengLaravel": "src/"
         }
     },
     "minimum-stability": "stable"
