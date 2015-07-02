@@ -1,24 +1,24 @@
-# UMeng PHP SDK For Laravel 4.2.*
+# UMeng PHP SDK For Laravel 5.*
 
 整合修改官方的示例，融合到L4中。
 
 1.composer 安装
 
-    composer require jason-xt/umeng-laravel @dev
+    composer require xieyi64/umeng-laravel5 @dev
 
 2.在app.php 中添加ServiceProvider、Facades
 
-    'JasonXt\UmengLaravel\UMengLaravelServiceProvider',
+    'xieyi64\UmengLaravel\UMengLaravelServiceProvider',
 aliases:
 
-    'Android'           => 'JasonXt\UmengLaravel\Facades\Android',
-    'IOS'               => 'JasonXt\UmengLaravel\Facades\IOS',
+    'Android'           => 'xieyi64\UmengLaravel\Facades\Android',
+    'IOS'               => 'xieyi64\UmengLaravel\Facades\IOS',
 
 3.配置文件
 
-    php artisan config:publish jason-xt/umeng-laravel
+    php artisan config:publish xieyi64/umeng-laravel
  
- 修改配置文件config/packages/jason-xt/umeng-laravel/config.php 填上你自己的Key Secret
+ 修改配置文件config/packages/xieyi64/umeng-laravel/config.php 填上你自己的Key Secret
  
 4.示例
 
