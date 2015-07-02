@@ -5,7 +5,7 @@
  * Date: 15/6/16
  * Time: 上午9:37
  */
-namespace JasonXt\UmengLaravel;
+namespace xieyi64\UmengLaravel;
 
 use Illuminate\Support\Facades\Config;
 
@@ -31,9 +31,9 @@ class Pusher
         $this->app_key = $key;
         $this->app_master_secret = $secret;
         $this->timestamp = strval(time());
-        $this->ios_alias_type = Config::get('umeng-laravel::ios_alias_type');
-        $this->android_alias_type = Config::get('umeng-laravel::android_alias_type');
-        $this->production = Config::get('umeng-laravel::production');
+        $this->ios_alias_type = Config::get('umeng-laravel.ios_alias_type');
+        $this->android_alias_type = Config::get('umeng-laravel.android_alias_type');
+        $this->production = Config::get('umeng-laravel.production');
 
     }
 }

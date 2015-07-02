@@ -6,11 +6,11 @@
  * Time: 14:24
  */
 
-namespace JasonXt\UmengLaravel\Android;
+namespace xieyi64\UmengLaravel\Android;
 
 
-use JasonXt\UmengLaravel\Exception\Exception;
-use JasonXt\UmengLaravel\Pusher;
+use xieyi64\UmengLaravel\Exception\Exception;
+use xieyi64\UmengLaravel\Pusher;
 
 class AndroidPusher extends Pusher
 {

@@ -1,7 +1,7 @@
 <?php
-namespace JasonXt\UmengLaravel\Android;
+namespace xieyi64\UmengLaravel\Android;
 
-use JasonXt\UmengLaravel\UmengNotification;
+use xieyi64\UmengLaravel\UmengNotification;
 
 abstract class AndroidNotification extends UmengNotification {
 	// The array for payload, please see API doc for more information

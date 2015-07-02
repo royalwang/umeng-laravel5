@@ -1,5 +1,5 @@
 <?php
-namespace JasonXt\UmengLaravel\IOS;
+namespace xieyi64\UmengLaravel\IOS;
 
 class IOSGroupcast extends IOSNotification {
 	function  __construct() {

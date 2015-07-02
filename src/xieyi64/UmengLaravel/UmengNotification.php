@@ -1,7 +1,7 @@
 <?php
-namespace JasonXt\UmengLaravel;
+namespace xieyi64\UmengLaravel;
 
-use JasonXt\UmengLaravel\Exception\Exception;
+use xieyi64\UmengLaravel\Exception\Exception;
 
 abstract class UmengNotification
 {
@@ -98,16 +98,13 @@ abstract class UmengNotification
         $curlErr = curl_error($ch);
         curl_close($ch);
         if ($httpCode == "0") {
-            // Time out
             throw new Exception($curlErr, $httpCode, 0);
-            //throw new Exception("Curl error number:" . $curlErrNo . " , Curl error details:" . $curlErr . "\r\n");
         } else if ($httpCode != "200") {
-            // We did send the notifition out and got a non-200 response
-
+//            return $result;
             throw new Exception($result['ret'], $httpCode,$result['data']['error_code']);
-            //throw new Exception("Http code:" . $httpCode . " details:" . $result . "\r\n");
         } else {
-            return $httpCode;
+            return $result['data']['task_id'];
+//            return $httpCode;
         }
     }
 

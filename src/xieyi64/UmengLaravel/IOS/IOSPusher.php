@@ -6,20 +6,40 @@
  * Time: 14:08
  */
 
-namespace JasonXt\UmengLaravel\IOS;
+namespace xieyi64\UmengLaravel\IOS;
 
 
-use JasonXt\UmengLaravel\Pusher;
-use JasonXt\UmengLaravel\Exception\Exception;
+use xieyi64\UmengLaravel\Pusher;
+use xieyi64\UmengLaravel\Exception\Exception;
 
 class IOSPusher extends Pusher
 {
+    function broadcast($aps = [], $extra =[]) {
+        try {
+            $brocast = new IOSBroadcast();
+            $brocast->setAppMasterSecret($this->app_master_secret);
+            $brocast->setPredefinedKeyValue("appkey",           $this->app_key);
+            $brocast->setPredefinedKeyValue("timestamp",        $this->timestamp);
+            foreach ($aps as $key => $val) {
+                $brocast->setPredefinedKeyValue($key, $val);
+            }
+            $brocast->setPredefinedKeyValue("production_mode", $this->production);
+            foreach ($extra as $key => $val) {
+                $brocast->setCustomizedField($key, $val);
+            }
+            return $brocast->send();
+        } catch (Exception $e) {
+//            return $e;
+            return $e->getUmengCode();
+        }
+    }
+
     /**发送iOS 单播消息
      * @param string $device_tokens ","分割
      * @param array $aps ['alert'=>'','badge'=>0,'sound'=>'chime','content-available'=>'']
      * @param array $extra
      * @return int|mixed
-     * @throws \JasonXt\UmengLaravel\Exception\Exception
+     * @throws \xieyi64\UmengLaravel\Exception\Exception
      */
     public function unicast($device_tokens = '', $aps = [], $extra = [])
     {
@@ -40,6 +60,7 @@ class IOSPusher extends Pusher
             }
             return $unicast->send();
         } catch (Exception $e) {
+//            return $e;
             return $e->getUmengCode();
         }
     }
@@ -74,6 +95,7 @@ class IOSPusher extends Pusher
             $customizedcast->setPredefinedKeyValue("production_mode", $this->production);
             return $customizedcast->send();
         } catch (Exception $e) {
+//            return $e;
             return $e->getUmengCode();
         }
     }

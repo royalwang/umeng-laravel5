@@ -6,7 +6,7 @@
  * Time: 下午1:57
  */
 
-namespace JasonXt\UmengLaravel\Exception;
+namespace xieyi64\UmengLaravel\Exception;
 
 
 class Exception extends \Exception
@@ -16,7 +16,7 @@ class Exception extends \Exception
      */
     protected $error_code = 0;
 
-    public function __construct($message = '', $http_code, $error_code = 0)
+    public function __construct($message = '', $http_code=200, $error_code = 0)
     {
         parent::__construct($message, $http_code);
         $this->error_code = $error_code;

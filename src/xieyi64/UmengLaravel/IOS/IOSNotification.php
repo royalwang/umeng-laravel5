@@ -1,8 +1,8 @@
 <?php
-namespace JasonXt\UmengLaravel\IOS;
+namespace xieyi64\UmengLaravel\IOS;
 
-use JasonXt\UmengLaravel\UmengNotification;
-use JasonXt\UmengLaravel\Exception\Exception;
+use xieyi64\UmengLaravel\UmengNotification;
+use xieyi64\UmengLaravel\Exception\Exception;
 
 abstract class IOSNotification extends UmengNotification {
 	// The array for payload, please see API doc for more information

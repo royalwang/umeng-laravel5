@@ -1,5 +1,5 @@
 <?php
-namespace JasonXt\UmengLaravel\Android;
+namespace xieyi64\UmengLaravel\Android;
 
 class AndroidCustomizedcast extends AndroidNotification {
 

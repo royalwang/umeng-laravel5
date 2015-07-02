@@ -1,5 +1,5 @@
 <?php
-namespace JasonXt\UmengLaravel\IOS;
+namespace xieyi64\UmengLaravel\IOS;
 
 class IOSFilecast extends IOSNotification {
 	function  __construct() {

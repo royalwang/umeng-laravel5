@@ -1,8 +1,8 @@
-<?php namespace JasonXt\UmengLaravel;
+<?php namespace xieyi64\UmengLaravel;
 
 use Illuminate\Support\ServiceProvider;
-use JasonXt\UmengLaravel\Android\AndroidPusher;
-use JasonXt\UmengLaravel\IOS\IOSPusher;
+use xieyi64\UmengLaravel\Android\AndroidPusher;
+use xieyi64\UmengLaravel\IOS\IOSPusher;
 
 class UmengLaravelServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,10 @@ class UmengLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('jason-xt/umeng-laravel');
+//        var_dump(__DIR__.'/config.php', config_path('umeng-laravel.php'));die;
+        $this->publishes([
+            __DIR__.'/config.php' => config_path('umeng-laravel.php'),
+        ],'config');
     }
 
     /**
@@ -34,10 +37,10 @@ class UmengLaravelServiceProvider extends ServiceProvider
     {
         //
         $this->app->bindShared('umeng.ios', function ($app) {
-            return new IOSPusher($app['config']['umeng-laravel::ios_appKey'], $app['config']['umeng-laravel::ios_app_master_secret']);
+            return new IOSPusher($app['config']['umeng-laravel.ios_appKey'], $app['config']['umeng-laravel.ios_app_master_secret']);
         });
         $this->app->bindShared('umeng.android', function ($app) {
-            return new AndroidPusher($app['config']['umeng-laravel::android_appKey'], $app['config']['umeng-laravel::android_app_master_secret']);
+            return new AndroidPusher($app['config']['umeng-laravel.android_appKey'], $app['config']['umeng-laravel.android_app_master_secret']);
         });
     }
 
